@@ -47,4 +47,4 @@ Okay, there are a lot of power lines. I don't understand it all, but there are s
 
 ![Schematic of the 325T](https://github.com/Silllies/uranus-fpga-board/blob/main/images/325Tschematic.png)
 
-*Total time spent: 3h 20m**
+*Total time spent: 3h 20m*
