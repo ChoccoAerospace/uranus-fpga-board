@@ -3,13 +3,13 @@ title: "uranus-fpga-board"
 github: "https://github.com/ChoccoAerospace/uranus-fpga-board/tree/main"
 description: "Found out about FPGAs and thought they were very cool—decided to try making a board for a nice one. Calling it Uranus because Uranus is a goated planet (YOOR-uh-nús)"
 created_at: "2026-10-04"
-total_time: "2h 30m"
+total_time: "5h 50m"
 ---
 
 # October 4, 2026: FPGAs are Actually Pretty Hype
 <!-- fabricate:entry 138 -->
 
-![Pinout of Xilinx Kintex 7 XC7K160T-2FFG676C](https://github.com/ChoccoAerospace/uranus-fpga-board/blob/main/images/160Tpinout.jpg)
+![Pinout of Xilinx Kintex 7 XC7K160T-2FFG676C](https://github.com/Silllies/uranus-fpga-board/blob/main/images/160Tpinout.jpg)
 
 Okay, the most important part of an FPGA board is the FPGA, so what is it, exactly? An FPGA stands for "Field-Programmable Gate Array," and if you are like me, that provides no usable information. FPGAs are a type of Programmable Logic Device (PLD). Other PLDs, like CPLDs, typically have a coarser, simpler architecture than an FPGA. FPGAs use Hardware Description Languages (HDLs) to control how their many programmable logic blocks work with other blocks to perform functions. The Field Programmable part of an FPGA comes from how its wiring can change based on instructions from something written in an HDL, as opposed to an Application-Specific Integrated Circuit (ASIC) that cannot change its logic wiring. FPGAs are often used to prototype before going all in on production of an ASIC. In my case, I am using an FPGA because I want to be able to change it to whatever I want and don't want to order a huge load of ASICs. An FPGA is NOT a microcontroller, but you can describe its hardware (lol) to make it work like a microcontroller, or even a processor.
 
@@ -28,8 +28,23 @@ ___
 
 ## Brainthinks from the same day
 
-![Mezzanine connector](https://github.com/ChoccoAerospace/uranus-fpga-board/blob/main/images/mezzanine.jpeg)
+![Mezzanine connector](https://github.com/Silllies/uranus-fpga-board/blob/main/images/mezzanine.jpeg)
 
 I don't think headers would be the best to preserve signal integrity. Upon doing more research, it sounds like edge connectors or mezzanine connectors will be the best. Both for signals and power. Edge connectors put the card at a 90-degree angle, while mezzanine connectors put it parallel. I think a mezzanine connector would be better, even for power. The large number of pins on a mezzanine connector helps reduce power quality degradation by lowering parasitic inductance, canceling out the magnetic field (if PWR and GND are alternated), and having a large cumulative surface area. Surface area is important because, while power will be sent as DC, the FPGA will pull power in very fast, erratic pulses, creating AC noise. I will have a mezzanine connector for both power and a peripheral board for testing.
 
 **Total time spent: 2h 30m**
+
+___
+
+# October 5, 2026: That's, ummmm, a lot of pins
+
+![Schematic of the previously mentioned Kintex 7 160T chip](https://github.com/Silllies/uranus-fpga-board/blob/main/images/kintexSchematic.png)
+
+I mean I did say that PCB design is comforting, but that was with a simple board that connects some preassembled boards. Now I have to learn what all these pins mean.  
+Okay, I did some more research and have decided that this project likely belongs in Tier 1. An FPGA board is provided as a Tier 2 example for simpler FPGAs, but I am using a far more complex FPGA, as well as DDR RAM. A similar FPGA board from Blueprint that had also had RAM was rated as Tier 1. I also did some more research on the processor, and found a better and cheaper model! The XC7K160T-3FFG676E is faster (Speed grade 3 instead of 2) and has a higher maximum operating temperature (E has a max of 100 degrees while C maxes out at 85), and LCSC sells it for $73.50, as opposed to $96 for the other. I don't really need the 676 ball package, but the 484 version doesn't have an equivalent sold by LCSC.  
+NEVERMIND! LCSC sells an XC7K325T-3FFG900E for nearly the same price! I do not need this but why not pay the same price for something FAR better! Now I have to redesign my schematic (At least where I got to) and get less sleep (I need more sleep, it's Klausur season)  
+Okay, there are a lot of power lines. I don't understand it all, but there are several voltages the chip takes. VCCO pins can take many voltages, depending on interface. There is also a lot of stuff for the GTX transceivers, which I also don't fully get. I haven't gotten to labelling all the IO pins yet, (which is more than the 646 ball). I did route the GND, though!
+
+![Schematic of the 325T] (https://github.com/Silllies/uranus-fpga-board/blob/main/images/325Tschematic.png)
+
+*Total time spent: 3h 20m**
