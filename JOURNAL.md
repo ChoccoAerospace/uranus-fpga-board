@@ -6,7 +6,7 @@ created_at: "2026-10-04"
 total_time: "2.5h"
 ---
 
-# October 4th, 2026: FPGAs are Actually Pretty Hype
+# October 4, 2026: FPGAs are Actually Pretty Hype
 
 ![Pinout of Xilinx Kintex 7 XC7K160T-2FFG676C](https://github.com/ChoccoAerospace/uranus-fpga-board/blob/main/images/160Tpinout.jpg)
 
