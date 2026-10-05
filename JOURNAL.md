@@ -1,6 +1,6 @@
 ---
 title: "uranus-fpga-board"
-github: "TBD, on Codeberg rn"
+github: "https://github.com/ChoccoAerospace/uranus-fpga-board/tree/main"
 description: "Found out about FPGAs and thought they were very cool—decided to try making a board for a nice one. Calling it Uranus because Uranus is a goated planet (YOOR-uh-nús)"
 created_at: "2026-10-04"
 total_time: "2.5h"
