@@ -32,11 +32,13 @@ ___
 
 I don't think headers would be the best to preserve signal integrity. Upon doing more research, it sounds like edge connectors or mezzanine connectors will be the best. Both for signals and power. Edge connectors put the card at a 90-degree angle, while mezzanine connectors put it parallel. I think a mezzanine connector would be better, even for power. The large number of pins on a mezzanine connector helps reduce power quality degradation by lowering parasitic inductance, canceling out the magnetic field (if PWR and GND are alternated), and having a large cumulative surface area. Surface area is important because, while power will be sent as DC, the FPGA will pull power in very fast, erratic pulses, creating AC noise. I will have a mezzanine connector for both power and a peripheral board for testing.
 
-**Total time spent: 2h 30m**
 
 ___
 
+**Total time spent: 2h 30m**
+
 # October 5, 2026: That's, ummmm, a lot of pins
+<!-- fabricate:entry 152 -->
 
 ![Schematic of the previously mentioned Kintex 7 160T chip](https://github.com/Silllies/uranus-fpga-board/blob/main/images/kintexSchematic.png)
 
