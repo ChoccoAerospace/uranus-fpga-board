@@ -45,6 +45,6 @@ Okay, I did some more research and have decided that this project likely belongs
 NEVERMIND! LCSC sells an XC7K325T-3FFG900E for nearly the same price! I do not need this but why not pay the same price for something FAR better! Now I have to redesign my schematic (At least where I got to) and get less sleep (I need more sleep, it's Klausur season)  
 Okay, there are a lot of power lines. I don't understand it all, but there are several voltages the chip takes. VCCO pins can take many voltages, depending on interface. There is also a lot of stuff for the GTX transceivers, which I also don't fully get. I haven't gotten to labelling all the IO pins yet, (which is more than the 646 ball). I did route the GND, though!
 
-![Schematic of the 325T] (https://github.com/Silllies/uranus-fpga-board/blob/main/images/325Tschematic.png)
+![Schematic of the 325T](https://github.com/Silllies/uranus-fpga-board/blob/main/images/325Tschematic.png)
 
 *Total time spent: 3h 20m**
