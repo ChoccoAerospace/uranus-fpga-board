@@ -6,8 +6,7 @@ created_at: "2026-10-04"
 total_time: "2.5h"
 ---
 
-## October 4th, 2026
-### FPGAs are Actually Pretty Hype
+# October 4th, 2026: FPGAs are Actually Pretty Hype
 
 ![Pinout of Xilinx Kintex 7 XC7K160T-2FFG676C](https://github.com/ChoccoAerospace/uranus-fpga-board/blob/main/images/160Tpinout.jpg)
 
@@ -24,14 +23,12 @@ RAM, I haven't researched enough about RAM yet. Capacitors, lots of them. JTAG a
 
 I intend to supply power to this board with a bench power supply (OOH, I could make that!), so it doesn't require an extreme amount of power thingamabobs, just enough to handle the power degradation from traveling over a cable.
 
-**Total time spent: 2h**
-
 ___
 
-### Brainthinks from the same day
+## Brainthinks from the same day
 
 ![Mezzanine connector](https://github.com/ChoccoAerospace/uranus-fpga-board/blob/main/images/mezzanine.jpeg)
 
 I don't think headers would be the best to preserve signal integrity. Upon doing more research, it sounds like edge connectors or mezzanine connectors will be the best. Both for signals and power. Edge connectors put the card at a 90-degree angle, while mezzanine connectors put it parallel. I think a mezzanine connector would be better. Even for power, the large number of pins on a mezzanine connector helps reduce power quality degradation by lowering parasitic inductance, canceling out the magnetic field (if PWR and GND are alternated), and having a large cumulative surface area. Surface area is important because, while power will be sent as DC, the FPGA will pull power in very fast, erratic pulses, creating noise. I will have a mezzanine connector for both power and a peripheral board for testing.
 
-**Total time spent: 0.5h**
+**Total time spent: 2.5h**
