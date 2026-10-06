@@ -68,7 +68,9 @@ I added the RAM to the schematic, routed grounds, and am currently waiting for V
 
 I learned that 16 bit DDR3 chips separate half the bits into "upper" and half into "lower" bits. This is because the 16 bit chip is structured as two 8 bit slices. The signals alternate between the two slices, controlled by upper and lower data strobe differential pairs.
 
-Finished schematicizing (???) the 325T and the 4 RAM chips. I initially tried to make it look nice, but the sheer volume of connections decided that would not happen. I know there is a way to make the schematic not as complicated and reducing connections, but I don't really want to mess with that. Yes I did actually spend 6 hours doing this; of course, not in one sitting. Maybe like 2 or 3. I used MIG to generate the memory interface stuffs, which does include the wiring, which is how I put everything together (and why the connections could seem random). I am dead tired now and there will be tea to wake up to from my rocketry club back home. goodnite!
+Finished schematicizing (???) the 325T and the 4 RAM chips. I initially tried to make it look nice, but the sheer volume of connections decided that would not happen. Yes I did actually spend 6 hours doing this; of course, not in one sitting. Maybe like 2 or 3. I used MIG to generate the memory interface stuffs, which does include the wiring, which is how I put everything together (and why the connections could seem random). I am dead tired now and there will be tea to wake up to from my rocketry club back home. goodnite!
+
+Upon Looking at the schematic again, I realized that people don't design schematics like this. I will probably make it look passable tomorrow
 
 ![Wacky schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/325TnRamSchem.png)
 
