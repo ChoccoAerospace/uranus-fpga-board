@@ -56,6 +56,7 @@ Okay, there are a lot of power lines. I don't understand it all, but there are s
 ___
 
 # October 6, 2026: RAMpocalypse
+<!-- fabricate:entry 167 -->
 
 ![RAM chip](https://github.com/Silllies/uranus-fpga-board/blob/main/images/W632GU6NB-11.png)
 
