@@ -81,7 +81,7 @@ ___
 
 # October 7, 2026: Restart!
 
-![Nicer RAM schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/NewRamSchem.png)
+![Nicer RAM schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/newRamSchem.png)
 
 I will be making the schematic readable today, but right now, I found a cheaper RAM option. The Winbon W63**1**GU6NB-11 is less than half the price of the 632, but also has half the storage. I have also set out other components I want to include on my board: HDMI port, MicroSD card slot, some LEDs, and some DIP switches.
 
