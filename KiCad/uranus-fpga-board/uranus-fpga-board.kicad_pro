@@ -661,13 +661,33 @@
         "uuid": "11d4e4d4-71ba-48aa-ae73-e6b6dc32b11b"
       }
     ],
-    "used_designators": "#PWR1,U1-5",
+    "used_designators": "C1-8,240Ω1,R1-8,#PWR1-28,U1-5",
     "variants": []
   },
   "sheets": [
     [
       "11d4e4d4-71ba-48aa-ae73-e6b6dc32b11b",
       "Root"
+    ],
+    [
+      "9b31d439-c2fe-44d5-bcd7-596f029a918d",
+      "FPGA"
+    ],
+    [
+      "d32b1b54-9a9e-4c46-91fe-6bab085527e9",
+      "RAM"
+    ],
+    [
+      "cee8d822-652e-465d-acca-28eb7a6fb777",
+      "High Speed IO"
+    ],
+    [
+      "d921dc71-75e5-4bd3-931c-5ccd6c981821",
+      "Misc Peripherals"
+    ],
+    [
+      "800651b2-5962-4199-b081-32599b035da2",
+      "Power"
     ]
   ],
   "text_variables": {},
