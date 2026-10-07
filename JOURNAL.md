@@ -3,7 +3,7 @@ title: "uranus-fpga-board"
 github: "https://github.com/ChoccoAerospace/uranus-fpga-board/tree/main"
 description: "Found out about FPGAs and thought they were very cool—decided to try making a board for a nice one. Calling it Uranus because Uranus is a goated planet (YOOR-uh-nús)"
 created_at: "2026-10-04"
-total_time: "5h 50m"
+total_time: "11h 50m"
 ---
 
 # October 4, 2026: FPGAs are Actually Pretty Hype
@@ -52,4 +52,26 @@ Okay, there are a lot of power lines. I don't understand it all, but there are s
 
 ![Schematic of the 325T](https://github.com/Silllies/uranus-fpga-board/blob/main/images/325Tschematic.png)
 
+
+___
+
 **Total time spent: 3h 20m**
+
+# October 6, 2026: RAMpocalypse
+<!-- fabricate:entry 167 -->
+
+![RAM chip](https://github.com/Silllies/uranus-fpga-board/blob/main/images/W632GU6NB-11.png)
+
+Found some RAM I am fine with using. 4 chips of 16 bit DDR3L 933 MHz. Each chip is $11, which I find quite insane. $11 is also the lowest price I found during my searching. The chip is the Winbon W632GU6NB-11, sourced from LCSC, obviously. I think I will use Aisler as they are based in Europe, have a minimum assembly count of 1 (I believe), and can source their parts from LCSC. I will probably see if they can pre-order the FPGA and hold it for me as I design it, as there is only 90 left. I will also have to ask on slack. Parts and manufacture will probably be more expensive, but it will be cheaper than assembling 2 boards from JLCPCB.
+
+I added the RAM to the schematic, routed grounds, and am currently waiting for Vivado to download so that I can use MIG to handle the DDR3 controller. I am doing this now because it also tells what pins I should I use out of the 900 I have to choose from :3
+
+I learned that 16 bit DDR3 chips separate half the bits into "upper" and half into "lower" bits. This is because the 16 bit chip is structured as two 8 bit slices. The signals alternate between the two slices, controlled by upper and lower data strobe differential pairs.
+
+Finished schematicizing (???) the 325T and the 4 RAM chips. I initially tried to make it look nice, but the sheer volume of connections decided that would not happen. Yes I did actually spend 6 hours doing this; of course, not in one sitting. Maybe like 2 or 3. I used MIG to generate the memory interface stuffs, which does include the wiring, which is how I put everything together (and why the connections could seem random). I am dead tired now and there will be tea to wake up to from my rocketry club back home. goodnite!
+
+Upon Looking at the schematic again, I realized that people don't design schematics like this. I will probably make it look passable tomorrow
+
+![Wacky schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/325TnRamSchem.png)
+
+**Total time spent: 6h**
