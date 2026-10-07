@@ -3,7 +3,7 @@ title: "uranus-fpga-board"
 github: "https://github.com/ChoccoAerospace/uranus-fpga-board/tree/main"
 description: "Found out about FPGAs and thought they were very cool—decided to try making a board for a nice one. Calling it Uranus because Uranus is a goated planet (YOOR-uh-nús)"
 created_at: "2026-10-04"
-total_time: "11h 50m"
+total_time: "15h 10m"
 ---
 
 # October 4, 2026: FPGAs are Actually Pretty Hype
@@ -75,3 +75,16 @@ Upon Looking at the schematic again, I realized that people don't design schemat
 ![Wacky schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/325TnRamSchem.png)
 
 **Total time spent: 6h**
+
+___
+
+
+# October 7, 2026: Restart!
+
+![Nicer RAM schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/NewRamSchem.png)
+
+I will be making the schematic readable today, but right now, I found a cheaper RAM option. The Winbon W63**1**GU6NB-11 is less than half the price of the 632, but also has half the storage. I have also set out other components I want to include on my board: HDMI port, MicroSD card slot, some LEDs, and some DIP switches.
+
+I was able to successfully make the schematic look nicer! I haven't done the FPGA side, but it is getting late. I was also able to do more pins, such as the VREF pins, which need to be half the voltage of the main RAM supply voltage. The footprint of the new RAM is the same, the only difference being that it has 1 less address pin. There were more differences for MIG. I also switched to dark mode, which is the most important thing done this session.
+
+**Total time spent: 3h 20m**
