@@ -75,3 +75,10 @@ Upon Looking at the schematic again, I realized that people don't design schemat
 ![Wacky schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/325TnRamSchem.png)
 
 **Total time spent: 6h**
+
+___
+
+
+# October 7, 2026: Restart!
+
+I will be making the schematic readable today, but right now, I found a cheaper RAM option. The Winbon W63**1**GU6NB-11 is less than half the price of the 632, but also has half the storage. I have also set out other components I want to include on my board: HDMI port, MicroSD card slot, some LEDs, DIP switches, 
