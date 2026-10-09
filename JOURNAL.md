@@ -3,7 +3,7 @@ title: "uranus-fpga-board"
 github: "https://github.com/ChoccoAerospace/uranus-fpga-board/tree/main"
 description: "Found out about FPGAs and thought they were very cool—decided to try making a board for a nice one. Calling it Uranus because Uranus is a goated planet (YOOR-uh-nús)"
 created_at: "2026-10-04"
-total_time: "15h 10m"
+total_time: "25h 30m"
 ---
 
 # October 4, 2026: FPGAs are Actually Pretty Hype
@@ -88,3 +88,35 @@ I will be making the schematic readable today, but right now, I found a cheaper 
 I was able to successfully make the schematic look nicer! I haven't done the FPGA side, but it is getting late. I was also able to do more pins, such as the VREF pins, which need to be half the voltage of the main RAM supply voltage. The footprint of the new RAM is the same, the only difference being that it has 1 less address pin. There were more differences for MIG. I also switched to dark mode, which is the most important thing done this session.
 
 **Total time spent: 3h 20m**
+
+___
+
+# October 8, 2026: New day, new RAM
+
+![Basic FPGA Schematic](https://github.com/Silllies/uranus-fpga-board/blob/main/images/newNewRamSchem.png)
+
+Realized my RAM was out of stock. found a cheap RAM chip and redesigned the schematic. This one looks even better! It also has decoupling capacitors. I also got a scare when searching for a crystal oscillator, thinking I would have to get a custom one, but realized MIG was being MIG and I could change the RAM speed to get a more favorable frequency.
+
+RAM schematic is all done. FPGA memory interface is almost done, I just need to do some power thingies like decoupling. I also began setting up my mezzanine connector. The really nice thing about it is that there is a standard called FMC (FPGA Mezzanine Connector, wow!). I will be using the FPGA's GTX transceivers, so I have to use the HPC (High Pin Count) variant. Because I want to be extra, I felt the need to use 8 GTX lanes (Out of my 12) for this FMC, meaning I need two of them.
+
+![more pins!!!](https://github.com/Silllies/uranus-fpga-board/blob/main/images/iLoveFMCHPC.png)
+
+You might be able to see the new problem here. I'll figure something out (add a third?). The specific FMC I am using is the ASP-134488-01. 
+
+Another annoying thing with the GTX system is that it requires very precise power supplies.
+
+**Total time spent: 5h 50m**
+
+___
+
+# October 9, 2026: New day, reday
+
+![Schematic for the FMC HPC](https://github.com/Silllies/uranus-fpga-board/blob/main/images/fmcHpcSchem.png)
+
+Get it? It's like a play on words of "redo". Anyways, I'm not using 2 HPC connectors, just 1. Good thing I never started anything intense. I did attached the signal names to all the pins on the FMC to later attach to the FPGA. To find out which pins I'm supposed to attach to what signals, I did some research and found the KC705 Evaluation Board, which documents its full pin assignments. It has an HPC and LPC connector, but many of their pins are left unconnected, so I can't copy it line for line, I will probably group pins by differential pair, routing them to the closest banks available. Higher priority data lines will be assigned to banks closer to the connector's side of the FPGA, which will be on the opposite side from the RAM.
+
+I also thought longer and harder about what I want this project to be. I started this board to test out a few ideas I had in mind, but these ideas don't utilize all the capabilities of the FPGA. I think I will keep this board to its original design intention, but I might make another, new FPGA board that is more intended to be a full dev board. I feel really close to getting out of the schematic phase, I just need to figure out the pins for the HPC connector, add some smaller components, work out the power, then boom! Power won't be too hard since it is just the schematic. PCB will be far more annoying. For the PCB, I am thinking of doing an 8 layer board with 3 ground planes and a power plane that is split into various regions to cover the varying voltages of the board. Layer 6 would have a ground plane on both sides of it, so it would be the high speed or sensitive signal layer. layer 1 and layer 8 are on the surface, but they are also on the surface. They are adjacent to a ground plane, though. Layer 3 is adjacent to a ground and the power plane. The ground plane is closer, but it isn't as good as the others. Or maybe it is fine, I don't know. 
+
+Actually, as I am writing this, I think I might just do a LPC connector. Like I said earlier, this board is being designed for a few specific purposes in mind, and those purposes don't need a whole HPC connector.
+
+**Total time spent: 4h 30m**
